@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Supply Forecast</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+        }
+        canvas {
+            max-width: 600px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Medical Supply Usage Forecast</h2>
+    <label for="usageInput">Enter daily usage (comma-separated):</label>
+    <input type="text" id="usageInput" placeholder="e.g. 100, 120, 110, 130">
+    <button onclick="calculateForecast()">Calculate Forecast</button>
+    
+    <h3 id="smaResult"></h3>
+    <h3 id="wmaResult"></h3>
+    
+    <canvas id="forecastChart"></canvas>
+    
+    <script>
+        function calculateForecast() {
+            const input = document.getElementById("usageInput").value;
+            const usageList = input.split(",").map(num => parseFloat(num.trim())).filter(num => !isNaN(num));
+            
+            if (usageList.length === 0) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+
+            const sma = forecastUsageSMA(usageList);
+            const wma = forecastUsageWMA(usageList);
+            
+            document.getElementById("smaResult").innerText = `Simple Moving Average Forecast: ${sma}`;
+            document.getElementById("wmaResult").innerText = `Weighted Moving Average Forecast: ${wma}`;
+            
+            renderChart(usageList, sma, wma);
+        }
+        
+        function forecastUsageSMA(usageList) {
+            const sum = usageList.reduce((acc, value) => acc + value, 0);
+            return Math.round(sum / usageList.length);
+        }
+        
+        function forecastUsageWMA(usageList) {
+            const weights = usageList.map((_, index) => index + 1);
+            const weightedSum = usageList.reduce((sum, value, index) => sum + value * weights[index], 0);
+            const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
+            return Math.round(weightedSum / totalWeight);
+        }
+        
+        function renderChart(usageList, sma, wma) {
+            const ctx = document.getElementById("forecastChart").getContext("2d");
+            
+            if (window.myChart) {
+                window.myChart.destroy();
+            }
+            
+            window.myChart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: Array.from({ length: usageList.length + 1 }, (_, i) => `Day ${i + 1}`),
+                    datasets: [
+                        {
+                            label: "Daily Usage",
+                            data: [...usageList, null],
+                            borderColor: "blue",
+                            fill: false
+                        },
+                        {
+                            label: "SMA Forecast",
+                            data: [...Array(usageList.length).fill(null), sma],
+                            borderColor: "green",
+                            fill: false
+                        },
+                        {
+                            label: "WMA Forecast",
+                            data: [...Array(usageList.length).fill(null), wma],
+                            borderColor: "red",
+                            fill: false
+                        }
+                    ]
+                }
+            });
+        }
+    </script>
+</body>
+</html> 
