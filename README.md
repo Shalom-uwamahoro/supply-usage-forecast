@@ -25,9 +25,9 @@ Implementation Details
     - An easy-to-use interface for both types of forecasts.
 
    Key Functions:
-    - forecastUsage(usageList, method)  // Main function
-    - calculateSMA(data)                // Helper for Simple Moving Average
-    - calculateWMA(data)                // Helper for Weighted Moving Average
+     - forecastUsage(usageList, method) // Main function
+     - calculateSMA(data) // Helper for Simple Moving Average
+     - calculateWMA(data) // Helper for Weighted Moving Average
 
   2. Interactive Visualization (supply-forecast-graph.html)
    The visualization component provides:
