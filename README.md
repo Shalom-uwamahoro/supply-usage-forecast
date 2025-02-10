@@ -41,7 +41,7 @@ How to Use
        const smaForecast = forecastUsage(dailyUsage, 'sma');
        const wmaForecast = forecastUsage(dailyUsage, 'wma');
      To run the script:
-     node supply-forecast.js
+       - node supply-forecast.js
 
   2. Web Interface
        - Open supply-forecast-graph.html in a web browser.
@@ -49,18 +49,18 @@ How to Use
        - Click "Calculate Forecast" to see results and visualization.
 
 Dependencies
-     Chart.js (loaded via CDN for visualization)
+      - Chart.js (loaded via CDN for visualization)
 
 Resources Used
-     - Chart.js for data visualization.
-     - JavaScript for core calculations.
-     - HTML/CSS for the user interface.
-     - Stack Overflow & AI Assistance(ChatGPT and Claude ai) for code optimization and documentation formatting.
-     - Investopedia & TradingView Documentations for understanding moving averages.
-     - Chart.js Documentation for visualization implementation.
+ - Chart.js for data visualization.
+ - JavaScript for core calculations.
+ - HTML/CSS for the user interface.
+ - Stack Overflow & AI Assistance(ChatGPT and Claude ai) for code optimization and documentation formatting.
+ - Investopedia & TradingView Documentations for understanding moving averages.
+ - Chart.js Documentation for visualization implementation.
 
 Testing
 You can test the application with sample data:
-const dailyUsage = [100, 120, 110, 130, 125, 115, 140];
+  - const dailyUsage = [100, 120, 110, 130, 125, 115, 140];
 
 
