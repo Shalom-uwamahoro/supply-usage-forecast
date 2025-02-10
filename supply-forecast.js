@@ -38,6 +38,7 @@ function calculateWMA(data) {
         weightedSum += data[i] * weight;
         weightSum += weight;
     }
+    
     return weightedSum / weightSum;
 }
 
