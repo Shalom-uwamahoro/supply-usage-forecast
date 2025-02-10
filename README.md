@@ -9,12 +9,12 @@ Features
    - Helps hospital administrators predict future Personal Protective Equipment (PPE) needs accurately.
    
 2. Real-Time Graph Visualization Using Chart.js
-   Users can input historical usage data and receive instant forecasts.
-   Enhances decision-making for PPE inventory control and supply chain planning.
-   Helps healthcare facilities monitor trends and adjust procurement strategies accordingly.
+   - Users can input historical usage data and receive instant forecasts.
+   - Enhances decision-making for PPE inventory control and supply chain planning.
+   - Helps healthcare facilities monitor trends and adjust procurement strategies accordingly.
 
 3. Input Validation and Error Handling
-   Prevents incorrect or incomplete data entry, ensuring reliable predictions.
+  - Prevents incorrect or incomplete data entry, ensuring reliable predictions.
 
 Implementation Details
  1. Core Forecast Module (supply-forecast.js)
