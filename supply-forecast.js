@@ -5,6 +5,7 @@
  * @param {string} method - 'sma' for Simple Moving Average, 'wma' for Weighted Moving Average.
  * @returns {number} Forecasted usage.
  */
+
 function forecastUsage(usageList, method) {
     if (!usageList || !method) {
         throw new Error('Invalid input. Please provide usage list and method.');
@@ -37,7 +38,6 @@ function calculateWMA(data) {
         weightedSum += data[i] * weight;
         weightSum += weight;
     }
-
     return weightedSum / weightSum;
 }
 
