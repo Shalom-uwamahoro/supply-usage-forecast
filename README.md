@@ -44,20 +44,20 @@ How to Use
      node supply-forecast.js
 
   2. Web Interface
-     Step 1:  Open supply-forecast-graph.html in a web browser.
-     step 2:  Enter comma-separated numbers in the input field.
-     step 3:  Click "Calculate Forecast" to see results and visualization.
+       - Open supply-forecast-graph.html in a web browser.
+       - Enter comma-separated numbers in the input field.
+       - Click "Calculate Forecast" to see results and visualization.
 
 Dependencies
      Chart.js (loaded via CDN for visualization)
 
 Resources Used
-  - Chart.js for data visualization.
-  - JavaScript for core calculations.
-  - HTML/CSS for the user interface.
-  - Stack Overflow & AI Assistance(ChatGPT and Claude ai) for code optimization and documentation formatting.
-  - Investopedia & TradingView Documentations for understanding moving averages.
-  - Chart.js Documentation for visualization implementation.
+     - Chart.js for data visualization.
+     - JavaScript for core calculations.
+     - HTML/CSS for the user interface.
+     - Stack Overflow & AI Assistance(ChatGPT and Claude ai) for code optimization and documentation formatting.
+     - Investopedia & TradingView Documentations for understanding moving averages.
+     - Chart.js Documentation for visualization implementation.
 
 Testing
 You can test the application with sample data:
