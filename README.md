@@ -5,8 +5,8 @@ This project implements a medical supply usage forecasting tool that calculates 
 
 Features
 1. Combined JavaScript Module for SMA and WMA Calculations
-   Function to handle both methods, allowing for flexible forecasting of medical supply usage.
-   Helps hospital administrators predict future Personal Protective Equipment (PPE) needs accurately.
+   - Function to handle both methods, allowing for flexible forecasting of medical supply usage.
+   - Helps hospital administrators predict future Personal Protective Equipment (PPE) needs accurately.
    
 2. Real-Time Graph Visualization Using Chart.js
    Users can input historical usage data and receive instant forecasts.
